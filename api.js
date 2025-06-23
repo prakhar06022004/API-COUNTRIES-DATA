@@ -45,3 +45,48 @@ fetch(
     });
   })
   .catch((err) => console.log(err));
+
+  function renderCountries(countriesArray) {
+  const countryContainer = document.querySelector(".countries-container");
+  countryContainer.innerHTML = ""; // saaf karo purane cards
+
+  countriesArray.forEach((country) => {
+    const countryCard = document.createElement("a");
+    countryCard.href = `countryPage.html?country=${country.name.common}`;
+    countryCard.classList.add("country");
+
+    countryCard.innerHTML = `
+      <img src="${country.flags.svg}" alt="${country.name.common}" />
+      <div class="flag-text">
+        <h3>${country.name.common}</h3>
+        <div class="three-text-flag">
+          <p><b>Population</b>: ${country.population.toLocaleString("en-IN")}</p>
+          <p><b>Region</b>: ${country.region}</p>
+          <p><b>Capital</b>: ${country.capital}</p>
+        </div>
+      </div>`;
+
+    countryContainer.appendChild(countryCard);
+  });
+}
+
+let allCountriesData = [];
+
+fetch("https://restcountries.com/v3.1/all?fields=name,capital,flags,population,region")
+  .then((res) => res.json())
+  .then((data) => {
+    allCountriesData = data;
+    renderCountries(data); // shuru me sab dikhaye
+
+    const searchInput = document.querySelector("input[type='search']");
+    searchInput.addEventListener("input", function () {
+      const inputValue = searchInput.value.toLowerCase();
+
+      const filtered = allCountriesData.filter((country) =>
+        country.name.common.toLowerCase().includes(inputValue)
+      );
+
+      renderCountries(filtered); // match hone wale dikhaye
+    });
+  })
+  .catch((err) => console.log(err));
