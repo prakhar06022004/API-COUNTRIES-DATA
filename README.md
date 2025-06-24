@@ -12,10 +12,4 @@
 ⚡ Fully responsive layout
 
 
-File	                                  Purpose
-api.html	                        Main page with country list
-api.js	                          JavaScript logic for homepage
-api.css	                          Styling for homepage
-countryPage.html    	            Details page for single country
-countryPage.js	                  JavaScript logic for country details
-countryPage.css	                  Styling for details page
+A simple and interactive web app that allows users to browse countries around the world using data from the REST Countries API. Users can search countries by name, filter them by region, and view detailed information for each country on a separate page. The app also supports dark mode, with preferences saved using localStorage.
