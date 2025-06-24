@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API</title>
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900"
       rel="stylesheet"
@@ -16,31 +16,30 @@
     <script src="api.js" defer></script>
   </head>
   <body>
-
- <div class="all">
-
-    <header>
+    <div class="all">
+      <header>
         <h1 class="title">Where in the world?</h1>
         <p class="darkMode"><i class="ri-moon-line"></i>&nbsp;Dark Mode</p>
-    </header>
+      </header>
 
-    <main>
-      <div class="search-filter-container">
-        <div class="search-container">
-        <i class="ri-search-line"></i>
-        <input type="search" placeholder="Search for a country...">
+      <main>
+        <div class="search-filter-container">
+          <div class="search-container">
+            <i class="ri-search-line"></i>
+            <input type="search" placeholder="Search for a country..." />
+          </div>
+          <select class="filter-by-region" name="" id="selectOption">
+            <option hidden>Filter by region</option>
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+            <option value="All">All</option>
+          </select>
         </div>
-        <select class="filter-by-region" name="" id="selectOption">
-          <option hidden>Filter by region</option>
-          <option value="Africa">Africa</option>
-          <option value="America">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
-      </div>
         <div class="countries-container"></div>
-    </main>
- </div>
+      </main>
+    </div>
   </body>
 </html>

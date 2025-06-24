@@ -60,7 +60,10 @@ fetch(
     const selectRegion = document.getElementById("selectOption");
     selectRegion.addEventListener("change", () => {
       const selectedRegion = selectRegion.value;
-
+      if(selectedRegion === 'All'){
+        renderCountries(allCountriesData)
+        return ;
+      }
       const filteredByRegion = allCountriesData.filter((country) => {
         return country.region === selectedRegion;
       });
