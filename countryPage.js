@@ -1,8 +1,8 @@
 // 1. Get the country name from URL
 const params = new URLSearchParams(window.location.search);
 const countryName = params.get("country");
+// console.log(countryName)
 
-// 2. Fetch country detail from API
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then((data) => {
@@ -20,7 +20,7 @@ const finalCurrency = currency
 const languages = Object.values(country.languages)
 const finalLanguage = languages.join(',')
 
-    console.log(currency);
+    // console.log(currency);
     container.innerHTML = `
           <img src="${country.flags.svg}" alt="${country.name.common} flag" />
           <div class='all-text'>
@@ -46,8 +46,21 @@ const finalLanguage = languages.join(',')
       "<p>Error loading data.</p>";
   });
 
-
+const body = document.body;
     const darkMode = document.querySelector('.darkMode');
+    const theme = localStorage.getItem('theme');
+    if(theme ==='dark'){
+      body.classList.add('darkActive')
+    }
 darkMode.addEventListener('click',function(){
-  document.querySelector('body').classList.toggle('darkActive')
+  body.classList.toggle('darkActive')
+
+  if(body.classList.contains('darkActive')){
+    localStorage.setItem('theme','dark')
+  }
+  else{
+    localStorage.setItem('theme','light')
+  }
+  
 })
+

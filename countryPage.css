@@ -91,7 +91,6 @@ main {
 .darkActive {
       background-color: black;
   color: white;
-  transition: 0.3s all ease;
 }
 
 .darkMode {
