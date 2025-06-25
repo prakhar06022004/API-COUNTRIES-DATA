@@ -46,7 +46,7 @@ fetch(
     allCountriesData = data;
     renderCountries(allCountriesData);
 
-    // 🔍 Search Input
+    // Search Input
     const searchInput = document.querySelector("input[type='search']");
     searchInput.addEventListener("input", () => {
       const inputValue = searchInput.value.toLowerCase();
@@ -56,7 +56,7 @@ fetch(
       renderCountries(filtered);
     });
 
-    // 🌍 Region Filter
+    // Region Filter
     const selectRegion = document.getElementById("selectOption");
     selectRegion.addEventListener("change", () => {
       const selectedRegion = selectRegion.value;
