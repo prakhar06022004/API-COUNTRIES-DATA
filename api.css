@@ -17,8 +17,6 @@ body {
 }
 
 header {
-  /* width: 70%;
-    margin: 0 auto; */
   display: flex;
   padding: 1.2rem 5rem;
   align-items: center;
@@ -33,7 +31,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: center; /* 👈 Add this */
+  justify-content: center;
 }
 
 .country {
@@ -66,7 +64,6 @@ main {
 .darkActive {
   background-color: black;
   color: white;
-  /* transition: 0.3s all ease; */
 }
 .darkActive .country {
   background-color: #1e1e1e;
@@ -88,7 +85,6 @@ main {
   width: 40%;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
   display: flex;
-  /* height: 30px; */
   width: 40%;
   align-items: center;
 padding: 0 10px;
@@ -97,8 +93,8 @@ padding: 0 10px;
 }
 
 .search-container input {
-  font-size: 0.8rem; /* 👈 Bigger text inside input */
-  padding: 10px;    /* 👈 Inside spacing */
+  font-size: 0.8rem; 
+  padding: 10px;    
   width: 100%;
   border: none;
   outline: none;
@@ -118,7 +114,6 @@ padding: 0 10px;
 }
 
 .darkActive .search-container {
-  /* box-shadow: 0 0 8px 0 rgb(212, 212, 212); */
   background-color: rgb(212, 212, 212);
   border-radius: 15px;
 }
